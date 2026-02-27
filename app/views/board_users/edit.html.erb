@@ -1,0 +1,14 @@
+<h1 class="display-4 text-primary">Editing board user</h1>
+
+<%= render "form", board_user: @board_user %>
+<br>
+<div>
+  <%= link_to "Back to board user", @board_user %>
+</div>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+

@@ -1,0 +1,85 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <h1 class="display-5 text-primary text-center mb-4">
+        mini blog
+      </h1>
+
+      <div class="card shadow-sm">
+        <div class="card-body">
+
+          <h2 class="fs-4 text-center mb-4">
+            新規記事作成
+          </h2>
+
+
+        <% if @post.errors.any? %>
+          <div class="alert alert-danger">
+            <ul class="mb-0">
+            <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+           </ul>
+          </div>
+        <% end %>
+
+
+
+
+       <div data-controller="character-count" id="new_post_form">
+
+         <%= form_with model: @post,
+           url: posts_path,
+           data: { action: "turbo:submit-end->character-count#reset" } do |form| %>
+
+       <!-- タイトル -->
+          <div class="mb-3">
+          <%= form.label :title, class:"form-label" %>
+          <%= form.text_field :title, class:"form-control" %>
+       </div>
+
+       <!-- 本文 -->
+         <div class="mb-2 position-relative">
+         <%= form.label :content, class:"form-label" %>
+         <%= form.text_area :content,
+            class:"form-control",
+            rows: 5,
+            data:{ character_count_target: "source" } %>
+
+    
+        <span
+          data-character-count-target="notice"
+          class="notice text-success small position-absolute"
+          style="right: 0; top: -1.2rem; display: none;"
+          >  
+        ✓ 投稿しました
+        </span>
+
+      </div>
+
+    <div class="text-end small text-muted mb-3">
+      <span data-character-count-target="display"></span>
+    </div>
+
+    <div class="text-end">
+      <%= form.submit "投稿する", class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>
+
+
+
+
+
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <%= link_to 'トップに戻る', posts_path, class: "btn btn-outline-secondary btn-sm" %>
+      </div>
+
+    </div>
+  </div>
+</div>

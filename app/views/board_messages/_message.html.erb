@@ -1,0 +1,63 @@
+<div class="mb-3">
+  <div class="fw-bold">
+    <%= board_message.board_user.nickname %>
+  </div>
+
+  <div class="small text-muted">
+    <%= time_ago_in_words(board_message.created_at) %>前
+  </div>
+
+ 
+
+
+
+
+  <div>
+    <%= board_message.content %>
+  </div>
+  
+
+  <!-- 返信ボタン -->
+  <div class="mt-2">
+    <%= link_to "返信",
+        new_board_message_path(parent_id: board_message.id),
+        class: "btn btn-sm btn-outline-primary" %>
+  </div>
+
+  
+
+  <% if board_message.board_user == @board_user %>
+    <div class="mt-2">
+      <%= button_to "削除",
+          board_message_path(board_message),
+          method: :delete,
+          data: { confirm: "本当に削除しますか？" },
+          class: "btn btn-sm btn-danger" %>
+    </div>
+  <% end %>
+
+
+
+
+  <!-- 返信一覧 -->
+  <% board_message.replies.each do |reply| %>
+    <div class="ms-4 mt-2 p-2 border-start">
+      <div class="small text-muted">
+        <%= reply.board_user.nickname %>
+      </div>
+      <div>
+        <%= reply.content %>
+      </div>
+
+
+      <div class="small text-muted">
+        <%= time_ago_in_words(board_message.created_at) %>前
+      </div>
+
+
+    </div>
+  <% end %>
+</div>
+
+
+

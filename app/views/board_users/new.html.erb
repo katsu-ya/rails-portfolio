@@ -1,0 +1,11 @@
+<% content_for :title, "New board user" %>
+
+<h1>New board user</h1>
+
+<%= render "form", board_user: @board_user %>
+
+<br>
+
+<div>
+  <%= link_to "Back to board users", board_users_path %>
+</div>

@@ -1,0 +1,53 @@
+
+<div class="container mt-4">
+  <div class="col-md-8 mx-auto">
+
+<h1 class="display-5 text-primary text-center">mini blog</h1>
+
+<h2 class="fs-4 mb-3"><%= @post.title %></h2>
+
+<div class="post-content">
+      <%= simple_format(@post.content) %>
+</div>
+
+
+<h3 class="fs-5 mt-4">※コメント</h3>
+
+
+<div class="d-flex justify-content-end gap-2 mb-3">
+  <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-secondary btn-sm" %>
+
+  <%= link_to "削除",
+      post_path(@post),
+      data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+      class: "btn btn-outline-danger btn-sm" %>
+</div>
+
+
+
+<!-- コメント一覧 -->
+<div id="comments_list_<%= @post.id %>">
+  <%= render @post.comments %>
+</div>
+
+<h3 class="fs-5 mt-4">コメント投稿</h3>
+
+<div id="comment_notice_<%= @post.id %>"></div>
+
+
+
+<!-- フォーム -->
+<div id="new_comment_form_<%= @post.id %>">
+  <%= render "comments/form", post: @post, comment: Comment.new %>
+</div>
+
+
+
+
+<div class="mt-4 text-center">
+      <%= link_to 'トップに戻る', posts_path, class: "btn btn-outline-secondary" %>
+    </div>
+
+
+  </div>
+</div>
