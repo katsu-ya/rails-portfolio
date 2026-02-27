@@ -1,0 +1,14 @@
+<h1 class="display-4 text-primary">People#show</h1>
+<p><%= @msg %></p>
+
+
+<h2><%= @person.name %> のメッセージ</h2>
+
+<table class="table">
+  <% @messages.each do |msg| %>
+    <tr>
+      <td><%= msg.title %></td>
+      <td><%= msg.message %></td>
+    </tr>
+  <% end %>
+</table>

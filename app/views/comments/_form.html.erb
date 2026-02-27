@@ -1,0 +1,21 @@
+<%= form_with model: [post, comment] do |form| %>
+
+  <%= form.hidden_field :parent_id %>
+
+  <%= form.text_area :content,
+        class: "form-control",
+        rows: 2 %>
+
+  <div class="text-end mt-1">
+    <%= form.submit "投稿する", class: "btn btn-sm btn-primary" %>
+  </div>
+
+<% end %>
+
+
+
+
+
+
+
+

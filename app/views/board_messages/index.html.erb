@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<h1 class="display-4 text-primary">Message Board</h1>
+<h5><%=link_to @board_user.nickname, 
+      controller: :board_users, action: :show, 
+      id:@current_account.id  %>
+    (<%=@current_account.email_address %>)</h5>
+<%= render 'form', board_message: @board_message %>
+<hr>
+<h2 class="h4">※Posted Messages.</h2>
+<table class="table">
+ 
+
+
+
+
+
+  <!-- 投稿一覧 -->
+  <% @board_messages.each do |message| %>
+    <%= render "message", board_message: message %>
+  <% end %>
+
+
+
+
+
+
+</table>
+<br>
+<div class="d-flex justify-content-center">
+  <%= will_paginate @board_messages, 
+  previous_label:"前へ", next_label:"次へ" %>
+</div>
+<%= button_to "Log out", session_path, method: :delete, 
+  class:"btn btn-link" if authenticated? %>

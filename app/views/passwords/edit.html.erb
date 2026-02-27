@@ -1,0 +1,37 @@
+<h1>新しいパスワード設定</h1>
+
+<% if @user.errors.any? %>
+  <div class="error-messages">
+    <% @user.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+<%= form_with model: @user,
+              url: update_password_path(@token),
+              method: :patch do |f| %>
+
+  <div class="field">
+    <%= f.label :password, "新しいパスワード" %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "新しいパスワード（確認）" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+   <div class="actions">
+    <%= f.submit "パスワードを更新", class: "auth-back-link" %>
+  </div>
+
+
+  <div class="auth-back-link">
+    <%= link_to "ログインに戻る", new_session_path %>
+  </div>
+
+
+<% end %>

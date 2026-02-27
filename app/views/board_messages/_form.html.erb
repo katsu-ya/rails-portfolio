@@ -1,0 +1,27 @@
+<%= form_with(model: board_message, local: true) do |form| %>
+
+  <% if board_message.errors.any? %>
+    <div class="text-danger">
+      <ul>
+        <% board_message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :content, class: "form-label" %>
+    <%= form.textarea :content, class: "form-control" %>
+  </div>
+
+  <% if board_message.parent_id.present? %>
+    <%= form.hidden_field :parent_id %>
+  <% end %>
+
+  <div class="mt-2">
+    <%= form.submit "投稿", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+

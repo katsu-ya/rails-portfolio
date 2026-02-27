@@ -1,0 +1,45 @@
+<% if @comment.persisted? %>
+
+  <%= turbo_stream.prepend "comments_list_#{@post.id}" do %>
+    <%= render "comments/comment", comment: @comment %>
+  <% end %>
+
+  <%= turbo_stream.replace "new_comment_form_#{@post.id}" do %>
+    <%= render "comments/form",
+          post: @post,
+          comment: Comment.new %>
+  <% end %>
+
+  <!-- ✅ 成功した時だけ生成される -->
+  <%= turbo_stream.replace "comment_notice_#{@post.id}" do %>
+    <div class="text-success small text-end mt-1">
+      ✓ 送信しました
+    </div>
+  <% end %>
+
+
+
+<% else %>
+
+  <%= turbo_stream.replace "new_comment_form_#{@post.id}" do %>
+    <%= render "comments/form",
+          post: @post,
+          comment: @comment %>
+  <% end %>
+
+  <!-- ❌ 失敗時は必ず空 -->
+  <%= turbo_stream.replace "comment_notice_#{@post.id}" do %>
+    <div></div>
+  <% end %>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+

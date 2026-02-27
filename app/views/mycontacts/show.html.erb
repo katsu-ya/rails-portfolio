@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @mycontact %>
+
+<div>
+  <%= link_to "Edit this mycontact", edit_mycontact_path(@mycontact) %> |
+  <%= link_to "Back to mycontacts", mycontacts_path %>
+
+  <%= button_to "Destroy this mycontact", @mycontact, method: :delete %>
+</div>

@@ -1,0 +1,21 @@
+{
+
+  "name": "app",
+  "private": true,
+  "devDependencies": {
+    "esbuild": "^0.25.4"
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "build:watch": "node esbuild.config.js --watch"
+  },
+  
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
+
+
+
+
