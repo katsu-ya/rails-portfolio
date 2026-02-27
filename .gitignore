@@ -1,31 +1,40 @@
-# OS
+# macOS
 .DS_Store
 
 # Ruby
 .bundle
 vendor/bundle
 
-# Rails
-log/*
-tmp/*
-!log/.keep
-!tmp/.keep
-
-# Database
-db/*.sqlite3
-db/*.sqlite3-journal
-
 # Environment variables
-.env
+.env*
 .env.*
 
+
+# Rails logs and temp files
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# PID files
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Storage (ActiveStorage, SQLite)
+/storage/*
+!/storage/.keep
+/tmp/storage/*
+!/tmp/storage/
+!/tmp/storage/.keep
+
+# Assets
+/public/assets
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Credentials keys
+/config/*.key
+
 # Node
-node_modules
-yarn-error.log
-
-# IDE
-.vscode
-.idea
-
-# macOS
-.DS_Store
+/node_modules
