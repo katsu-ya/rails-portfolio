@@ -1,45 +1,26 @@
-<<<<<<< HEAD
-# rails-portfolio（Rails）
+# rails-portfolio
 
 ## 概要
-ユーザー認証付きの掲示板アプリです。
+ユーザー認証機能を備えた掲示板アプリです。  
+ログイン機能やパスワード再設定機能を自前で実装しています。
 
 ## 使用技術
 - Ruby
-- Rails
+- Ruby on Rails
 - SQLite3
 
-## 機能
+## 主な機能
 - ユーザー登録 / ログイン / ログアウト
 - パスワード再設定
-- 投稿のCRUD
+- 投稿の作成・編集・削除（CRUD）
 
 ## 工夫した点
-- 認証まわりのbefore_action設計
+- before_action を用いた認証制御の設計
+- Current を使ったログインユーザー管理
+- パスワード再設定機能の実装
 - エラーメッセージの日本語化
-=======
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> f78f60b (Initial commit)
+## 今後追加したい機能
+- ページネーション
+- デザイン改善
+- 本番環境へのデプロイ
