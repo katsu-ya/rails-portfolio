@@ -10,7 +10,6 @@ class BoardMessagesController < ApplicationController
                       .paginate(page: params[:page])
   end
 
-
   def show
     redirect_to board_messages_path
   end
@@ -19,13 +18,9 @@ class BoardMessagesController < ApplicationController
     @board_message = BoardMessage.new(parent_id: params[:parent_id])
   end
 
-
   def edit
     redirect_to board_messages_path
   end
-
-
-
 
   def create
     @board_message = BoardMessage.new(board_message_params)

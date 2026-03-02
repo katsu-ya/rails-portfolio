@@ -25,7 +25,6 @@ class BlogsController < ApplicationController
     end
   end
   
-
   def edit
     @post = Post.find(params[:id])
   end
@@ -39,8 +38,6 @@ class BlogsController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-
-
 
    def destroy
     @post = Post.find(params[:id])

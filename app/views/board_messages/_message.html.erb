@@ -6,25 +6,17 @@
   <div class="small text-muted">
     <%= time_ago_in_words(board_message.created_at) %>前
   </div>
-
- 
-
-
-
-
+  
   <div>
     <%= board_message.content %>
   </div>
   
-
   <!-- 返信ボタン -->
   <div class="mt-2">
     <%= link_to "返信",
         new_board_message_path(parent_id: board_message.id),
         class: "btn btn-sm btn-outline-primary" %>
   </div>
-
-  
 
   <% if board_message.board_user == @board_user %>
     <div class="mt-2">
@@ -35,9 +27,6 @@
           class: "btn btn-sm btn-danger" %>
     </div>
   <% end %>
-
-
-
 
   <!-- 返信一覧 -->
   <% board_message.replies.each do |reply| %>
@@ -54,9 +43,8 @@
         <%= time_ago_in_words(board_message.created_at) %>前
       </div>
 
-
-    </div>
-  <% end %>
+  </div>
+    <% end %>
 </div>
 
 
