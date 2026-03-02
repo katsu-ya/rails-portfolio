@@ -28,14 +28,10 @@ class PasswordsController < ApplicationController
     end
   end
 
-
-
   def edit
     @token = params[:token]
     @user = User.find_by!(reset_password_token: params[:token])
   end
-
-
 
   def update
     @token = params[:token]
@@ -49,11 +45,9 @@ class PasswordsController < ApplicationController
     end
   end
 
-
   private
 
   def password_params
     params.require(:user).permit(:password, :password_confirmation)
   end
-
 end
