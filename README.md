@@ -8,6 +8,7 @@
 - Ruby
 - Ruby on Rails
 - SQLite3
+- Hotwire（Turbo）
 
 ## 主な機能
 - ユーザー登録 / ログイン / ログアウト
