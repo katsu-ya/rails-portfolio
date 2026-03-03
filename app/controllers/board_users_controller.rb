@@ -6,7 +6,6 @@ class BoardUsersController < ApplicationController
   layout 'board_users'
 
   def show
-    # 何もしなくてOK（@board_user は set_board_user でセット済み）
   end
 
   def edit
