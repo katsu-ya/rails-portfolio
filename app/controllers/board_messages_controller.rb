@@ -38,17 +38,9 @@ class BoardMessagesController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
   def update
     redirect_to board_messages_path
   end
-
 
   def destroy
     board_message = BoardMessage.find(params[:id])
@@ -61,7 +53,6 @@ class BoardMessagesController < ApplicationController
       redirect_to board_messages_path, alert: "削除できません"
     end
   end
-
 
   private
 
