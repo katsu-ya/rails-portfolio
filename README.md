@@ -9,6 +9,7 @@ CRUD機能と認証処理の理解を深めるために開発しました。
 ## 使用技術
 - Ruby 3.3.10
 - Ruby on Rails 8.1.2
+- Puma 7.1.0
 - SQLite3
 - Hotwire（Turbo）
 - Git / GitHub
