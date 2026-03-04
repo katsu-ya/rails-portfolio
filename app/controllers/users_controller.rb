@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   allow_unauthenticated_access only: %i[new create]
-  
   layout 'board_users'
 
   def new

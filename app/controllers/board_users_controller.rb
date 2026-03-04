@@ -1,4 +1,3 @@
-
 class BoardUsersController < ApplicationController
   before_action :require_authentication
   before_action :set_board_user
@@ -19,7 +18,6 @@ class BoardUsersController < ApplicationController
     end
   end
 
-
   private
 
   def set_board_user
@@ -38,5 +36,4 @@ class BoardUsersController < ApplicationController
   def board_user_params
     params.require(:board_user).permit(:nickname)
   end
-
 end
