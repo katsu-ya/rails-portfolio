@@ -54,9 +54,5 @@ end
   get "msgboard/index"
   post "msgboard/index"
 
-  get  "/hello", to: "hello#index"
-  post "/hello", to: "hello#create"
 
-
-  
 end
