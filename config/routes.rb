@@ -1,25 +1,19 @@
  Rails.application.routes.draw do
 
-
    resources :board_messages
    resources :board_users
    resources :users, only: [:new, :create, :edit, :update]
 
-
-
-
    root "board_messages#index"
-
 
    resource :session
 
-     resource :password, only: [:new, :create]
+   resource :password, only: [:new, :create]
 
-     get  "/password/edit/:token",   to: "passwords#edit",   as: :edit_password
-     patch "/password/update/:token", to: "passwords#update", as: :update_password
+   get  "/password/edit/:token",   to: "passwords#edit",   as: :edit_password
+   patch "/password/update/:token", to: "passwords#update", as: :update_password
 
   
-
 
    get "blogs/index"
    get "blogs/show"
@@ -45,10 +39,6 @@ resources :posts do
 end
 
 
-  
-
-
-
   get "cards", to: "cards#index"
   get "cards/index"
   get "cards/show"
@@ -59,16 +49,10 @@ end
   patch "cards/edit/:id", to: "cards#edit"
   get "cards/delete/:id", to: "cards#delete"
 
-
-
   get "msgboard", to: "msgboard#index"
   post "msgboard", to: "msgboard#index"
   get "msgboard/index"
   post "msgboard/index"
-
-
-
-
 
   get  "/hello", to: "hello#index"
   post "/hello", to: "hello#create"
