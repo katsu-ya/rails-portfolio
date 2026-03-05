@@ -12,8 +12,6 @@
   </div>
 <% end %>
 
-
-
 <%= form_with url: password_path, method: :post, local: true do |f| %>
   <div class="field">
     <%= f.email_field :email_address, placeholder: "example@example.com", required: true %>
@@ -23,7 +21,6 @@
     <%= f.submit "再設定リンクを送信" %>
   </div>
 <% end %>
-
 
 <div class="auth-back-link">
   <%= link_to "ログインに戻る", new_session_path %>
