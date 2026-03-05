@@ -69,3 +69,7 @@ gem "jsbundling-rails", "~> 1.3"
 
 gem "will_paginate"
 gem "will_paginate-bootstrap4"
+
+group :development, :test do
+  gem 'rspec-rails'
+end
