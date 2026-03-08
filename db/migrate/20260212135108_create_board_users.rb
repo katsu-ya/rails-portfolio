@@ -4,7 +4,6 @@ class CreateBoardUsers < ActiveRecord::Migration[8.1]
       t.text :nickname
       t.integer :user_id
       t.text :memo
-
       t.timestamps
     end
   end
